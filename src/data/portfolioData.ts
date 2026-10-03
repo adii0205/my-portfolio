@@ -30,7 +30,7 @@ export const PORTFOLIO_DATA = {
     cgpa: '8.06 / 10.0',
     email: 'adityajaiswal33008@gmail.com',
     phone: '+91-75228-27490',
-    avatar: '/src/assets/images/aditya_actual_photo_1791016585987.jpg',
+    avatar: '/aditya_actual_photo_1791016585987.jpg.jpeg',
     socials: {
       github: 'https://github.com/adii0205',
       linkedin: 'https://www.linkedin.com/in/adityajaiswal33008',
