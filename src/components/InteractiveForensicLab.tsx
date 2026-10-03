@@ -82,7 +82,7 @@ export function InteractiveForensicLab() {
             {/* Base Layer: Raw Keyframe */}
             <div className="absolute inset-0">
               <img
-                src="/src/assets/images/deepfake_forensic_render_1791012501818.jpg"
+                src="/deepfake_forensic_render_1791012501818.jpg"
                 alt="AI facial forensic scan"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
