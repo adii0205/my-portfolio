@@ -137,7 +137,7 @@ export const PORTFOLIO_DATA = {
       period: 'Sep 2026',
       category: 'quant' as const,
       technologies: ['React 19', 'TypeScript', 'WebGL (GPGPU)', 'Vite', 'Tailwind CSS', 'Canvas API'],
-      featuredImage: '/src/assets/images/quant_risk_render_1791012480354.jpg',
+      featuredImage: '/quant_risk_render_1791012480354.jpg',
       summary: 'End-to-end portfolio risk platform simulating 100K stochastic paths in 14 ms via WebGL fragment shaders (33x faster than NumPy), computing VaR, Expected Shortfall, and 750-day rolling backtests across 9 competing quantitative models.',
       highlights: [
         'Built an end-to-end portfolio risk platform running 9 competing models (GBM, bootstrap, Student-t, GARCH, GJR-GARCH, Heston stochastic volatility, 3-state Markov regime-switching, t-copula, Bayesian hybrid) on the same portfolio to quantify model risk in VaR and Expected Shortfall.',
@@ -165,7 +165,7 @@ export const PORTFOLIO_DATA = {
       period: 'Feb 2026',
       category: 'systems' as const,
       technologies: ['Node.js', 'PostgreSQL', 'Redis', 'GraphQL', 'Docker', 'Nginx', 'Bull Queues', 'Jest'],
-      featuredImage: '/src/assets/images/hero_liquid_glass_1791012461579.jpg',
+      featuredImage: '/hero_liquid_glass_1791012461579.jpg',
       summary: 'Horizontally scaled distributed URL shortening engine handling 2,100+ req/s at 99.8% uptime, featuring a two-tier cache (LRU + Redis) achieving a 92% hit rate and reducing query latency from 850 ms down to 23 ms.',
       highlights: [
         'Architected a distributed URL shortener handling 2,100+ req/s across horizontally scaled servers behind an Nginx load balancer (least-conn) with 99.8% uptime under sustained stress testing.',
@@ -194,7 +194,7 @@ export const PORTFOLIO_DATA = {
       period: 'Oct 2026',
       category: 'ai' as const,
       technologies: ['TensorFlow', 'Celery', 'Redis', 'PostgreSQL', 'C2PA v2.1', 'Python', 'Gemini 3.8 Flash', 'rPPG'],
-      featuredImage: '/src/assets/images/deepfake_forensic_render_1791012501818.jpg',
+      featuredImage: '/deepfake_forensic_render_1791012501818.jpg',
       summary: 'Biometric and optical forensics system achieving 87.4% accuracy across 5,000+ benchmark videos, integrating XceptionNet face-swap detection, 2D-FFT frequency artifacts, C2PA cryptographic provenance, and browser rPPG liveness.',
       highlights: [
         'Engineered a multi-model ensemble detector (XceptionNet face-swap detection, SyncNet audio-visual drift, 2D-FFT frequency spectrum artifacts, and C2PA v2.1 provenance), achieving 87.4% accuracy on 5,000+ videos across FaceForensics++, Celeb-DF, and generative diffusion benchmarks.',
