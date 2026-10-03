@@ -99,7 +99,7 @@ export function InteractiveForensicLab() {
             >
               <div className="relative w-full h-full bg-[#050B14]">
                 <img
-                  src="/src/assets/images/deepfake_forensic_render_1791012501818.jpg"
+                  src="/deepfake_forensic_render_1791012501818.jpg"
                   alt="Forensic diagnostic overlay"
                   className="w-full h-full object-cover filter contrast-125 saturate-150"
                   referrerPolicy="no-referrer"
