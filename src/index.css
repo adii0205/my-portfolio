@@ -1,0 +1,219 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-display: 'Syne', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #05070d;
+    color: #e2e8f0;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Apple iOS / iPadOS Pure Liquid Glass Effect (matched to Control Center & Liquid Dock) */
+.liquid-glass {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(25, 30, 48, 0.55) 45%,
+    rgba(10, 14, 26, 0.65) 100%
+  );
+  backdrop-filter: blur(50px) saturate(220%) contrast(108%);
+  -webkit-backdrop-filter: blur(50px) saturate(220%) contrast(108%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.45);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 24px 60px -12px rgba(0, 0, 0, 0.75),
+    0 8px 24px -4px rgba(0, 0, 0, 0.5),
+    inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -1.5px 1px 0 rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+/* Apple Pure Liquid Glass Transparent Dock Pill (Exact iOS Water Glass Meniscus) */
+.liquid-dock-pill {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(255, 255, 255, 0.05) 35%,
+    rgba(255, 255, 255, 0.02) 70%,
+    rgba(255, 255, 255, 0.10) 100%
+  );
+  backdrop-filter: blur(36px) saturate(220%) brightness(115%);
+  -webkit-backdrop-filter: blur(36px) saturate(220%) brightness(115%);
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  box-shadow: 
+    0 24px 50px -10px rgba(0, 0, 0, 0.65),
+    0 6px 16px rgba(0, 0, 0, 0.35),
+    inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -1px 1.5px 0 rgba(255, 255, 255, 0.35),
+    inset 0 0 25px 0 rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+
+/* Water surface tension gloss sheen */
+.liquid-dock-pill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: radial-gradient(
+    ellipse 80% 50% at 50% 0%,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.06) 55%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.liquid-glass-subtle {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(20, 26, 42, 0.5) 50%,
+    rgba(12, 16, 28, 0.6) 100%
+  );
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 
+    0 16px 40px -8px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.liquid-glass-glow {
+  position: relative;
+}
+
+.liquid-glass-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(56, 189, 248, 0.18),
+    transparent 40%
+  );
+  border-radius: inherit;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.liquid-glass-glow:hover::before {
+  opacity: 1;
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #05070d;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+/* Infinite Marquee Keyframes for Slowly Moving Stack */
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-33.333%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 38s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 38s linear infinite;
+}
+
+.mask-gradient {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* Print Stylesheet for Resume PDF generation and printing */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  header, nav, #quant-core-3d, #projects, #repositories, #quant-lab, #systems-lab, #forensic-lab, #skills, #achievements, #about, footer, .liquid-dock-pill, .print\\:hidden {
+    display: none !important;
+  }
+
+  .resume-print-root {
+    position: static !important;
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    background: transparent !important;
+  }
+
+  .resume-print-sheet {
+    max-height: none !important;
+    overflow: visible !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #printable-resume-document {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+
+  #printable-resume-document * {
+    color: #0f172a !important;
+  }
+
+  #printable-resume-document h1,
+  #printable-resume-document h2,
+  #printable-resume-document strong {
+    color: #000000 !important;
+  }
+}
+
