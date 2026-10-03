@@ -1,17 +1,11 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
 
 export function LiquidGlassPortraitCard() {
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
   const [isScanning, setIsScanning] = useState(false);
-  const [customAvatar, setCustomAvatar] = useState<string | null>(null);
   const cardRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const saved = localStorage.getItem('aditya_exact_photo');
-    if (saved) setCustomAvatar(saved);
-  }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
@@ -28,7 +22,7 @@ export function LiquidGlassPortraitCard() {
     setRotateY(0);
   };
 
-  const activeAvatar = customAvatar || PORTFOLIO_DATA.personal.avatar;
+  const activeAvatar = PORTFOLIO_DATA.personal.avatar;
 
   return (
     <div
@@ -67,30 +61,6 @@ export function LiquidGlassPortraitCard() {
           </div>
 
           <div className="flex items-center gap-2">
-            <label
-              className="px-2 py-0.5 rounded text-[10px] uppercase tracking-wider bg-white/[0.06] hover:bg-white/[0.14] text-slate-300 hover:text-white border border-white/[0.08] cursor-pointer transition-colors flex items-center gap-1"
-              title="Upload your actual photo"
-            >
-              <span>Photo</span>
-              <input
-                type="file"
-                accept="image/*"
-                className="hidden"
-                onChange={(e) => {
-                  const file = e.target.files?.[0];
-                  if (file) {
-                    const reader = new FileReader();
-                    reader.onload = () => {
-                      const dataUrl = reader.result as string;
-                      setCustomAvatar(dataUrl);
-                      localStorage.setItem('aditya_exact_photo', dataUrl);
-                    };
-                    reader.readAsDataURL(file);
-                  }
-                }}
-              />
-            </label>
-
             <button
               onClick={() => setIsScanning((prev) => !prev)}
               className={`px-2 py-0.5 rounded text-[10px] uppercase tracking-wider transition-colors ${
